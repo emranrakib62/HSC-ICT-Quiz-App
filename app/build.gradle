@@ -43,4 +43,6 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+  implementation 'com.github.fornewid:neumorphism:0.3.0'
+
 }
