@@ -8,15 +8,26 @@
     android:padding="16dp"
     android:background="@color/black">
 
-    <!-- CardView -->
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
+        android:layout_margin="10dp"
+        android:padding="12dp"
+        android:layout_gravity="center"
+        app:neumorph_shapeType="flat"
+        app:neumorph_shadowElevation="6dp"
+        app:neumorph_shadowColorLight="#D12121"
+        app:neumorph_shadowColorDark="#0C5ED9"
+        app:neumorph_backgroundColor="#E0E0E0"
+        app:neumorph_cornerFamily="rounded"
+        app:neumorph_cornerSize="16dp">
 
-        <!-- Inner LinearLayout (Horizontal orientation) -->
+
+
+
+    <!-- Inner LinearLayout (Horizontal orientation) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -58,6 +69,6 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
 </LinearLayout>
