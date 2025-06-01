@@ -1,14 +1,10 @@
 package com.example.hscictquiz;
 
-
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -20,20 +16,15 @@ import java.util.List;
 
 public class Activity17 extends AppCompatActivity {
 
-    private TextView questionText;
-    private TextView timerText;
-    private TextView resultText;
+    private TextView questionText, timerText, resultText;
     private RadioGroup optionsGroup;
-    private Button submitButton;
+    private View submitButton;
     private ProgressBar progressBar;
 
     private List<Question> questionList;
-    private int currentQuestionIndex = 0;
-    private int score = 0;
-    private int totalQuestions;
+    private int currentQuestionIndex = 0, score = 0, totalQuestions;
     private CountDownTimer countDownTimer;
-    private MediaPlayer correctSound;
-    private MediaPlayer wrongSound;
+    private MediaPlayer correctSound, wrongSound;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -48,25 +39,17 @@ public class Activity17 extends AppCompatActivity {
         submitButton = findViewById(R.id.submitButton);
         progressBar = findViewById(R.id.progressBar);
 
-        // Initialize sounds
         correctSound = MediaPlayer.create(this, R.raw.cute);
         wrongSound = MediaPlayer.create(this, R.raw.error);
 
-        // Initialize questions
         initializeQuestions();
 
         totalQuestions = questionList.size();
         progressBar.setMax(totalQuestions);
 
-        // Display the first question
         displayQuestion();
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswer();
-            }
-        });
+        submitButton.setOnClickListener(v -> checkAnswer());
     }
 
     private void initializeQuestions() {
@@ -133,12 +116,9 @@ public class Activity17 extends AppCompatActivity {
         if (currentQuestionIndex < questionList.size()) {
             Question currentQuestion = questionList.get(currentQuestionIndex);
             questionText.setText(currentQuestion.getQuestion());
-
-            // Clear previous options
-            optionsGroup.clearCheck();
             optionsGroup.removeAllViews();
+            optionsGroup.clearCheck();
 
-            // Dynamically add radio buttons for options
             for (int i = 0; i < currentQuestion.getOptions().length; i++) {
                 RadioButton radioButton = new RadioButton(this);
                 radioButton.setText(currentQuestion.getOptions()[i]);
@@ -146,23 +126,17 @@ public class Activity17 extends AppCompatActivity {
                 optionsGroup.addView(radioButton);
             }
 
-            // Update progress bar
             progressBar.setProgress(currentQuestionIndex);
-
-            // Start timer
             startTimer();
         } else {
-            // Quiz finished
-            countDownTimer.cancel();
+            if (countDownTimer != null) countDownTimer.cancel();
             showResults();
             submitButton.setEnabled(false);
         }
     }
 
     private void startTimer() {
-        if (countDownTimer != null) {
-            countDownTimer.cancel();
-        }
+        if (countDownTimer != null) countDownTimer.cancel();
 
         countDownTimer = new CountDownTimer(50000, 1000) {
             @Override
@@ -204,27 +178,20 @@ public class Activity17 extends AppCompatActivity {
         String resultMessage = "Quiz Finished!\nCorrect Answers: " + score + "/" + totalQuestions + "\nWrong Answers: " + (totalQuestions - score);
         resultText.setText(resultMessage);
         resultText.setVisibility(View.VISIBLE);
-
-        // Show final progress in progress bar
         progressBar.setProgress(totalQuestions);
 
-        // Show dialog with Restart and Home options
         new android.app.AlertDialog.Builder(this)
                 .setTitle("Quiz Completed")
                 .setMessage(resultMessage)
                 .setCancelable(false)
                 .setPositiveButton("Restart", (dialog, which) -> {
-                    // Restart the quiz
                     currentQuestionIndex = 0;
                     score = 0;
                     resultText.setVisibility(View.GONE);
                     displayQuestion();
                     submitButton.setEnabled(true);
                 })
-                .setNegativeButton("Home", (dialog, which) -> {
-                    // Navigate to home (you can customize this action)
-                    finish();
-                })
+                .setNegativeButton("Home", (dialog, which) -> finish())
                 .show();
     }
 
@@ -247,16 +214,8 @@ public class Activity17 extends AppCompatActivity {
             this.correctAnswerIndex = correctAnswerIndex;
         }
 
-        public String getQuestion() {
-            return question;
-        }
-
-        public String[] getOptions() {
-            return options;
-        }
-
-        public int getCorrectAnswerIndex() {
-            return correctAnswerIndex;
-        }
+        public String getQuestion() { return question; }
+        public String[] getOptions() { return options; }
+        public int getCorrectAnswerIndex() { return correctAnswerIndex; }
     }
 }
