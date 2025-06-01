@@ -52,7 +52,7 @@
         android:padding="16dp"
         app:neumorph_lightSource="leftTop"
         app:neumorph_shadowElevation="3dp"
-        app:neumorph_shapeType="pressed"
+        app:neumorph_shapeType="flat"
         app:neumorph_backgroundColor="@color/white"
         app:neumorph_cornerFamily="rounded"
         app:neumorph_cornerSize="16dp"
