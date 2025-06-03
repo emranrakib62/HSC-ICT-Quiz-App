@@ -18,13 +18,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class Activity30 extends AppCompatActivity {
 
     private TextView questionText;
     private TextView timerText;
     private TextView resultText;
     private RadioGroup optionsGroup;
-    private Button submitButton;
+    private NeumorphCardView submitButton;
     private ProgressBar progressBar;
 
     private List<Question> questionList;
