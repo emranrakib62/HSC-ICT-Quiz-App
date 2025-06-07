@@ -24,7 +24,7 @@ public class Activity35 extends AppCompatActivity {
     private TextView timerText;
     private TextView resultText;
     private RadioGroup optionsGroup;
-    private Button submitButton;
+    private NeumorphCardView submitButton;
     private ProgressBar progressBar;
 
     private List<Question> questionList;
