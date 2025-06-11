@@ -58,11 +58,10 @@
         app:neumorph_backgroundColor="@color/white"
         app:neumorph_cornerFamily="rounded"
         app:neumorph_cornerSize="16dp"
-        app:neumorph_shadowColorDark="#192F0D"
+        app:neumorph_shadowColorDark="@color/orange_light"
         app:neumorph_shadowColorLight="@color/colorAccent">
 
         <TextView
-            android:background="@color/background"
             android:layout_gravity="center"
             android:gravity="center"
             android:textStyle="bold"
