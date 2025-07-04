@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private GridView gridView;
     private ImageSlider imageSlider;
 
+
     private final int[] images = {
             R.drawable.pic1, R.drawable.pic2, R.drawable.pic3,
             R.drawable.pic_2, R.drawable.unnamed, R.drawable.pic_3
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        imageSlider = findViewById(R.id.imageSlider);
         gridView = findViewById(R.id.gridview);
 
         GridAdapter adapter = new GridAdapter(this, images, titles);
