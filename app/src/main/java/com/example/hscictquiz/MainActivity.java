@@ -7,6 +7,12 @@ import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private GridView gridView;
 
@@ -41,4 +47,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+    private void setupImageSlider() {
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.city11, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city12, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city13, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city15, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city5, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city6, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city7, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city8, ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels);
+    }
+
+
+
+
+
 }
