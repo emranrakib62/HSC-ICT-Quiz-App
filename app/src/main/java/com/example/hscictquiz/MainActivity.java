@@ -54,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupImageSlider() {
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.city11, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.city12, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.city13, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city2, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city3, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city4, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.city5, ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels);
     }
