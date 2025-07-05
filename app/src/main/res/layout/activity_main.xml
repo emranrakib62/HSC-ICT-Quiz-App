@@ -28,12 +28,12 @@
             android:layout_margin="3dp"
             android:padding="10dp"
             app:neumorph_shapeType="basin"
-            app:neumorph_shadowElevation="25dp"
+            app:neumorph_shadowElevation="5dp"
             app:neumorph_backgroundColor="#E0E0E0"
             app:neumorph_cornerFamily="rounded"
-            app:neumorph_cornerSize="16dp"
-            app:neumorph_shadowColorLight="#DEEF38"
-            app:neumorph_shadowColorDark="#11E949"
+            app:neumorph_cornerSize="15dp"
+            app:neumorph_shadowColorLight="#5CDC1C"
+            app:neumorph_shadowColorDark="#FFAB40"
             app:neumorph_lightSource="leftTop"
             >
 
